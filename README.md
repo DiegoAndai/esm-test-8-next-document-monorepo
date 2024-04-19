@@ -2,7 +2,7 @@
 
 ## Context
 
-Issue found when trying to add `exports` field to `material-nextjs` integration package.
+Issue found when [trying to add `exports`](https://github.com/mui/material-ui/pull/41596) field to [the `material-nextjs` integration package](https://github.com/mui/material-ui/tree/next/packages/mui-material-nextjs).
 This is a minimal repro with the following structure:
 
 - `packages/minimal-next-document-package` is a package which imports the default from `next/document.js` and checks if `getInitialProps` is defined. This is a minimal version of what `material-nextjs` does (reference). It has two equivalent versions:
@@ -30,7 +30,7 @@ Document.getInitialProps; // expectedly undefined
 Document.default.getInitialProps; // function
 ```
 
-But this is expected and properly handled when transpiling ([reference](<https://unpkg.com/browse/@mui/material-nextjs@5.15.11/node/v13-pagesRouter/pagesRouterV13Document.js#:~:text=_document.default.getInitialProps(ctx)>)).
+But this is expected and properly handled when transpiling ([material-nextjs reference](<https://unpkg.com/browse/@mui/material-nextjs@5.15.11/node/v13-pagesRouter/pagesRouterV13Document.js#:~:text=_document.default.getInitialProps(ctx)>)).
 
 ## Expected behavior
 
@@ -42,7 +42,8 @@ import Document from "next/document.js";
 Document.getInitialProps; // function
 ```
 
-Reference: https://nodejs.org/docs/latest/api/esm.html#esm_commonjs_namespaces:~:text=The%20preceding%20module%20supports%20named%20imports%20in%20ES%20modules%3A
+- `material-nextjs` ESM reference: https://unpkg.com/browse/@mui/material-nextjs@5.15.11/v13-pagesRouter/pagesRouterV13Document.js#:~:text=Document.getInitialProps(ctx)
+- NodeJS reference: https://nodejs.org/docs/latest/api/esm.html#esm_commonjs_namespaces:~:text=The%20preceding%20module%20supports%20named%20imports%20in%20ES%20modules%3A
 
 ## Running the repro
 
