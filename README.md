@@ -47,7 +47,7 @@ Reference: https://nodejs.org/docs/latest/api/esm.html#esm_commonjs_namespaces:~
 ## Running the repro
 
 1. Clone the repo
-2. `cd apps/consumer`
+2. `cd esm-test-8-next-document-monorepo/apps/consumer`
 3. `pnpm install`
 4. `pnpm dev`
 
