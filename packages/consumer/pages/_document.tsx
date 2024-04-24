@@ -1,5 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import test from "minimal-next-document-package/test.mjs";
+import {
+  DocumentHeadTags,
+  DocumentHeadTagsProps,
+  documentGetInitialProps,
+} from "@mui/material-nextjs/v14-pagesRouter";
+
+console.log(documentGetInitialProps);
 
 export default function Document() {
   return (
@@ -12,3 +18,5 @@ export default function Document() {
     </Html>
   );
 }
+
+Document.getInitialProps = documentGetInitialProps;
